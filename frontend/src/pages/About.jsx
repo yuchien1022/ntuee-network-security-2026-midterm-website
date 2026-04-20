@@ -74,66 +74,6 @@ export default function About() {
         </FadeIn>
       </section>
 
-      {/* Course Goals Section */}
-      <section>
-        <FadeIn>
-          <h2>Course Goals</h2>
-          <div className="goals-list">
-            <div className="goal-item">
-              <span className="goal-num">01</span>
-              <p>
-                Learn more about web security and how to build safe
-                applications.
-              </p>
-            </div>
-            <div className="goal-item">
-              <span className="goal-num">02</span>
-              <p>
-                Improve my skills in frontend and backend development.
-              </p>
-            </div>
-            <div className="goal-item">
-              <span className="goal-num">03</span>
-              <p>
-                Participate in CTF competitions and learn from real challenges.
-              </p>
-            </div>
-          </div>
-        </FadeIn>
-      </section>
-
-      {/* Life Goals Section */}
-      <section>
-        <FadeIn>
-          <h2>Life Goals</h2>
-          <div className="goals-list">
-            <div className="goal-item">
-              <span className="goal-num">01</span>
-              <p>
-                Complete my master's degree successfully and get through the
-                thesis journey well.
-              </p>
-            </div>
-            <div className="goal-item">
-              <span className="goal-num">02</span>
-              <p>
-                Find a great job with good pay and real work-life balance.
-              </p>
-            </div>
-            <div className="goal-item">
-              <span className="goal-num">03</span>
-              <p>Hopefully have a place of my own someday.</p>
-            </div>
-            <div className="goal-item">
-              <span className="goal-num">04</span>
-              <p>
-                Travel the world and experience different cultures, food, and
-                concerts.
-              </p>
-            </div>
-          </div>
-        </FadeIn>
-      </section>
     </div>
   );
 }
