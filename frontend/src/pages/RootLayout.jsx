@@ -8,6 +8,13 @@ export default function RootLayout() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
 
+  const publicNavLinks = [
+    { to: "/", label: "Home" },
+    { to: "/about", label: "About" },
+    { to: "/ai-work", label: "AI Work" },
+    { to: "/messages", label: "Messages" },
+  ];
+
   async function handleLogout() {
     try {
       await services.auth.logout();
@@ -34,26 +41,13 @@ export default function RootLayout() {
           <Link to="/">Yu Chien Hsiao</Link>
         </div>
         <ul>
-          <li>
-            <Link to="/" className={path === "/" ? "active" : ""}>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/about" className={path === "/about" ? "active" : ""}>
-              About
-            </Link>
-          </li>
-          <li>
-            <Link to="/ai-work" className={path === "/ai-work" ? "active" : ""}>
-              AI Work
-            </Link>
-          </li>
-          <li>
-            <Link to="/messages" className={path === "/messages" ? "active" : ""}>
-              Messages
-            </Link>
-          </li>
+          {publicNavLinks.map((item) => (
+            <li key={item.to}>
+              <Link to={item.to} className={path === item.to ? "active" : ""}>
+                {item.label}
+              </Link>
+            </li>
+          ))}
           {user ? (
             <>
               <li>
