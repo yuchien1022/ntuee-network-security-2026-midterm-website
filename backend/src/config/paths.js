@@ -7,4 +7,3 @@ export const uploadsDir = process.env.UPLOAD_DIR
   : path.resolve(backendRoot, "uploads");
 
 export const frontendDistDir = path.resolve(backendRoot, "../frontend/dist");
-
