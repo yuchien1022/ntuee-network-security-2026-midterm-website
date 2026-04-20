@@ -791,12 +791,10 @@ footer p {
   nav {
     position: sticky;
     padding: 0.7rem 1rem;
-    gap: 0.35rem;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    gap: 0.55rem;
+    align-items: center;
   }
   nav .logo {
-    width: 100%;
     font-size: 0.92rem;
     line-height: 1.1;
     white-space: nowrap;
@@ -809,6 +807,7 @@ footer p {
     flex-wrap: wrap;
     row-gap: 0.3rem;
     column-gap: 0.65rem;
+
   }
   nav a,
   .btn-link {

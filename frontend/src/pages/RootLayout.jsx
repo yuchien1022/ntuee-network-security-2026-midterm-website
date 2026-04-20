@@ -8,13 +8,6 @@ export default function RootLayout() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
 
-  const publicNavLinks = [
-    { to: "/", label: "Home" },
-    { to: "/about", label: "About" },
-    { to: "/ai-work", label: "AI Work" },
-    { to: "/messages", label: "Messages" },
-  ];
-
   async function handleLogout() {
     try {
       await services.auth.logout();
@@ -41,13 +34,27 @@ export default function RootLayout() {
           <Link to="/">Yu Chien Hsiao</Link>
         </div>
         <ul>
-          {publicNavLinks.map((item) => (
-            <li key={item.to}>
-              <Link to={item.to} className={path === item.to ? "active" : ""}>
-                {item.label}
-              </Link>
-            </li>
-          ))}
+          <li>
+            <Link to="/" className={path === "/" ? "active" : ""}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" className={path === "/about" ? "active" : ""}>
+              About
+            </Link>
+          </li>
+          <li>
+            <Link to="/ai-work" className={path === "/ai-work" ? "active" : ""}>
+              AI Work
+            </Link>
+          </li>
+          <li>
+            <Link to="/messages" className={path === "/messages" ? "active" : ""}>
+              Messages
+            </Link>
+          </li>
+
           {user ? (
             <>
               <li>
@@ -57,7 +64,11 @@ export default function RootLayout() {
               </li>
               <li className="nav-user">
                 {user.avatarUrl ? (
-                  <img src={`${import.meta.env.VITE_API_URL ?? ""}${user.avatarUrl}`} alt={user.username} className="nav-avatar" />
+                  <img
+                    src={`${import.meta.env.VITE_API_URL ?? ""}${user.avatarUrl}`}
+                    alt={user.username}
+                    className="nav-avatar"
+                  />
                 ) : (
                   <span className="nav-avatar nav-avatar-initials">
                     {user.username.charAt(0).toUpperCase()}
